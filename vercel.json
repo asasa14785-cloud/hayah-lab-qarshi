@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/img/:path*", "destination": "/api/index" },
+    { "source": "/life-qarshia-9137/:path*", "destination": "/api/index" },
+    { "source": "/life-qarshia-9137", "destination": "/api/index" }
+  ]
+}

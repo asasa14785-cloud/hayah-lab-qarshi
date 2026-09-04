@@ -62,3 +62,17 @@ code.html               نسخة أصلية احتياطية (لا تُمسح)
 
 - الموقع يعمل حتى لو السيرفر مقفول (يعرض آخر محتوى ثابت) — لكن التعديلات تحتاج السيرفر شغالاً.
 - الصور الحالية روابط خارجية مؤقتة (`googleusercontent`) — يُنصح بحفظها محلياً في `assets/img` قبل الرفع النهائي.
+
+## النشر على Vercel + Turso (الموقع الحي)
+
+1. أنشئ قاعدة Turso مجانية: turso.tech ← Create database باسم hayah-lab ← انسخ URL و Token.
+2. في Vercel → المشروع → Settings → Environment Variables أضف:
+   TURSO_URL=libsql://....turso.io
+   TURSO_TOKEN=....
+   JWT_SECRET=قيمة-عشوائية-طويلة
+   ADMIN_PASSWORD=hayat2026
+   (واترك ADMIN_PATH الافتراضي — تغييره يتطلب تعديل vercel.json أيضاً)
+3. Deploy — أول تشغيل يزرع كل البيانات والصور تلقائياً في Turso.
+4. محلياً: يعمل بدون أي متغيرات (SQLite ملف lab.db).
+
+ملاحظة: كلمة سر اللوحة تُدار من زر تغيير كلمة السر داخل اللوحة. عند نسيانها محلياً: reset-password.bat.
