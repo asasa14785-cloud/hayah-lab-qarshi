@@ -1,0 +1,1595 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>معمل الحياه للتحليل الطبيه بالقرشيه | دقة التحليل تبدأ بالثقة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        background-color: #faf8ff;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+      }
+    }
+
+    .lab-glass {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 30px 0 rgba(10, 37, 64, 0.05);
+    }
+    
+    .lab-glass-dark {
+      background: rgba(10, 37, 64, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 12px 40px 0 rgba(0, 15, 34, 0.4);
+    }
+
+    .optical-ruler {
+      background-image: repeating-linear-gradient(to left, rgba(0, 103, 129, 0.25) 0, rgba(0, 103, 129, 0.25) 1px, transparent 1px, transparent 12px);
+    }
+
+    .grid-calibration {
+      background-size: 28px 28px;
+      background-image: linear-gradient(to right, rgba(0, 103, 129, 0.035) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0, 103, 129, 0.035) 1px, transparent 1px);
+    }
+
+    .btn-elevate {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-elevate:hover {
+      transform: translateY(-2px);
+    }
+    .btn-elevate:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Continuous RTL Marquee Animation */
+    @keyframes marquee-rtl {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(50%);
+      }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-rtl 35s linear infinite;
+    }
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* Shimmer Light Reflection on Top Promotional Strip */
+    @keyframes teal-reflect {
+      0% { transform: translateX(120%) skewX(-20deg); }
+      50% { transform: translateX(-120%) skewX(-20deg); }
+      100% { transform: translateX(-120%) skewX(-20deg); }
+    }
+    .teal-shimmer {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.08) 50%, transparent 100%);
+      animation: teal-reflect 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    /* Pulse animation for maps pin */
+    @keyframes radar-pulse {
+      0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7); }
+      70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 16px rgba(20, 184, 166, 0); }
+      100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
+    }
+    .pin-radar {
+      animation: radar-pulse 2.2s infinite;
+    }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006781",
+            "on-secondary-fixed": "#001f29",
+            "on-secondary-container": "#00647d",
+            "on-tertiary-fixed": "#002113",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "surface-secondary": "#F1F5F9",
+            "surface-canvas": "#F8FAFC",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#b9eaff",
+            "text-tertiary": "#64748B",
+            "on-primary-fixed": "#001c37",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#d2e4ff",
+            "whatsapp-green": "#25D366",
+            "inverse-primary": "#b0c8eb",
+            "secondary-fixed-dim": "#81d1f0",
+            "primary": "#000f22",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#009e6d",
+            "on-background": "#131b2e",
+            "tertiary-container": "#002a1a",
+            "outline": "#74777e",
+            "on-primary-fixed-variant": "#314865",
+            "on-tertiary-fixed-variant": "#005236",
+            "teal-soft": "#14B8A6",
+            "tertiary-fixed": "#6ffbbe",
+            "inverse-surface": "#283044",
+            "outline-variant": "#c4c6ce",
+            "on-primary-container": "#768dad",
+            "surface-inverse": "#0a2540",
+            "surface-container": "#eaedff",
+            "surface-primary": "#FFFFFF",
+            "brand-active": "#071B30",
+            "tertiary": "#001209",
+            "on-surface-variant": "#43474d",
+            "health-dark": "#059669",
+            "brand-hover": "#144D82",
+            "surface-tint": "#49607e",
+            "text-muted": "#475569",
+            "surface": "#faf8ff",
+            "border-hairline": "rgba(15, 23, 42, 0.08)",
+            "border-glass": "rgba(255, 255, 255, 0.65)",
+            "secondary-container": "#8fdfff",
+            "on-surface": "#131b2e",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-high": "#e2e7ff",
+            "primary-fixed-dim": "#b0c8eb",
+            "background": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "on-secondary-fixed-variant": "#004d62",
+            "surface-dim": "#d2d9f4",
+            "primary-container": "#0a2540",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "surface-variant": "#dae2fd",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "sans": ["IBM Plex Sans Arabic", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    }
+</script>
+</head>
+<body class="bg-surface font-sans text-on-surface antialiased selection:bg-secondary/15 selection:text-secondary m-0 p-0">
+<!-- TOP CLINICAL BAR -->
+<aside aria-label="شريط التواصل السريع" class="hidden lg:block bg-primary text-slate-300 text-xs py-2 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="text-slate-400 font-medium">الموقع:</span>
+<span class="text-slate-200 font-semibold">الطريق السريع بين ميت يزيد والقرشية - مركز السنطة</span>
+</div>
+<span class="text-white/20">|</span>
+<div class="flex items-center gap-1.5 text-slate-300">
+<span class="material-symbols-outlined text-[15px] text-teal-soft">schedule</span>
+<span class="">مواعيد العمل: يومياً من 9:00 صباحاً حتى 12:00 منتصف الليل</span>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<a class="hover:text-emerald-400 transition-colors flex items-center gap-1 font-mono" href="https://wa.me/201038879791" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[15px] text-whatsapp-green">chat</span>
+<span class="">واتساب: 01038879791</span>
+</a>
+<span class="text-white/20">|</span>
+<a class="hover:text-white transition-colors flex items-center gap-1 font-mono" href="tel:01038879791">
+<span class="material-symbols-outlined text-[14px]">call</span>
+<span class="">01038879791</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- NAVIGATION HEADER -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-border-hairline shadow-[0_2px_12px_rgba(10,37,64,0.03)]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+<!-- Brand Logo / Identity -->
+<a class="flex items-center gap-3 group shrink-0" href="#">
+<div class="p-1 rounded-xl bg-surface-container-low border border-outline-variant/30 group-hover:border-secondary/40 transition-colors shrink-0">
+<img alt="شعار معمل الحياه للتحليل الطبيه بالقرشيه" class="h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VfvaHF3LwfXLrpCYTSxIev6LSL7PBB-lKo0Ix5jFcDZ6VkIb-LacFE-5OnHLfrWv7fUSYMtVIZLMQx_0Rv2reki654W7CtZePgERno_PKOqtpBSoHnTH9zduN4VMPlSmYeJws9kwsWoCUZq6zAUtiTpVayRDWdVRh6G9JlxJV_m3Tlv238UzMdainYsE_bbhbzNlrdj4yn7x39oP3l5LjrgR5q6yEmwLHeUUeUdj2fkt3M2Eo0f0k">
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-bold text-base sm:text-lg text-primary tracking-tight">معمل الحياه للتحليل الطبيه</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary/10 text-secondary border border-secondary/20">بالقرشيه</span>
+</div>
+<span class="text-[11px] sm:text-xs text-text-muted">دقة التحليل تبدأ بالثقة • مركز السنطة</span>
+</div>
+</a>
+<!-- Desktop Navigation: Full Ordered List -->
+<nav class="hidden xl:flex items-center gap-1 bg-surface-container-low/60 p-1.5 rounded-xl border border-border-hairline text-xs font-medium">
+<a class="px-3 py-1.5 rounded-lg font-semibold bg-primary-container text-white shadow-sm" href="#">الرئيسية</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#specimen-journey">رحلة العينة</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#diagnostic-index">دليل الفحوصات</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#home-collection">السحب المنزلي</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#result-portal">طلب النتيجة</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#packages">العروض الحصرية</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#medical-advice">النصائح الطبية</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#lab-location">موقع المعمل</a>
+<a class="px-2.5 py-1.5 rounded-lg text-slate-700 hover:text-secondary hover:bg-white transition-all" href="#about">عن المعمل</a>
+</nav>
+<!-- Header CTAs -->
+<div class="flex items-center gap-2 sm:gap-3 shrink-0">
+<a class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors btn-elevate" href="https://wa.me/201038879791?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%85%D8%B9%D9%85%D9%84%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87%20%D8%A8%D8%A7%D9%84%D9%82%D8%B1%D8%B4%D9%8A%D9%87%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1" rel="noopener noreferrer" target="_blank">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="hidden sm:inline">واتساب:</span>
+<span class="font-mono text-[11px] sm:text-xs">01038879791</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-primary-container text-white hover:bg-brand-hover shadow-sm btn-elevate" href="#home-collection">
+<span class="material-symbols-outlined text-[18px]">home_health</span>
+<span class="">احجز سحب منزلي</span>
+</a>
+</div>
+</div>
+</header>
+<!-- DEDICATED TOP PROMOTIONAL STRIP — "العروض الحصرية" ONLY (Directly below Nav, seamless into Hero) -->
+<section aria-label="العروض الحصرية فقط" class="marquee-wrapper relative overflow-hidden bg-[#071b30] text-white border-b border-teal-soft/20 h-20 sm:h-[84px] flex items-center shadow-lg m-0 p-0">
+<!-- Shimmer light reflection effect -->
+<div class="teal-shimmer"></div>
+<!-- Edge fading gradients -->
+<div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#071b30] to-transparent z-10 pointer-events-none"></div>
+<div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#071b30] to-transparent z-10 pointer-events-none"></div>
+<!-- Infinite Loop Track -->
+<div class="marquee-track flex items-center">
+<!-- Set 1 -->
+<div class="flex items-center gap-6 pl-6">
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-amber-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">باقة الفحص الشامل — خصم خاص لفترة محدودة</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-teal-soft text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">باقة كبار السن والسكر التراكمي الشاملة</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-emerald-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">خصم 20% على تحاليل الغدة الدرقية وملف الدهون</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-sky-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">باقة الاطمئنان السريع للأطفال والأنيميا</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-rose-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">عرض خاص لجميع حاملي الروشتات الطبية بالقرشية</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+</div>
+<!-- Set 2 (for seamless endless loop) -->
+<div aria-hidden="true" class="flex items-center gap-6 pl-6">
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-amber-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">باقة الفحص الشامل — خصم خاص لفترة محدودة</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-teal-soft text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">باقة كبار السن والسكر التراكمي الشاملة</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-emerald-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">خصم 20% على تحاليل الغدة الدرقية وملف الدهون</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-sky-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">باقة الاطمئنان السريع للأطفال والأنيميا</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-teal-soft/30 transition-all text-xs sm:text-sm group" href="#packages">
+<span class="px-2.5 py-0.5 rounded-md bg-rose-400 text-slate-950 font-bold text-[11px] shadow-sm">العروض الحصرية</span>
+<span class="font-medium text-slate-100">عرض خاص لجميع حاملي الروشتات الطبية بالقرشية</span>
+<span class="material-symbols-outlined text-[16px] text-teal-soft group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</a>
+<span class="text-teal-soft/40 text-xs">◆</span>
+</div>
+</div>
+</section>
+<main>
+<!-- HERO SECTION (Refined Asymmetric Layout, No Visual Collisions) -->
+<section class="relative pt-10 pb-16 lg:pt-14 lg:pb-24 overflow-hidden grid-calibration border-b border-border-hairline">
+<div class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute bottom-0 left-10 w-96 h-96 bg-teal-soft/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+<!-- Typography Column -->
+<div class="lg:col-span-6 flex flex-col items-start text-right">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full lab-glass border border-secondary/20 mb-4">
+<span class="material-symbols-outlined text-[17px] text-secondary">verified_user</span>
+<span class="text-xs font-semibold text-secondary">معمل الحياه للتحليل الطبيه بالقرشيه</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="text-[11px] text-text-muted">مركز السنطة</span>
+</div>
+<div class="relative mb-5">
+<div class="optical-ruler h-1 w-24 mb-3"></div>
+<h1 class="text-3xl sm:text-4xl lg:text-[46px] font-bold text-primary leading-[1.28] tracking-tight">
+  دقة التحليل <br>
+  تبدأ <span class="relative inline-block text-secondary">
+    بالثقة
+    <svg class="absolute -bottom-2 left-0 right-0 w-full h-2.5 text-teal-soft/70" preserveAspectRatio="none" viewBox="0 0 100 12">
+<path d="M0,7 Q50,13 100,6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</span>
+</h1>
+</div>
+<p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+  في معمل الحياه بالقرشيه، نعتني بكل عينة بمنتهى الدقة والمسؤولية الطبية. نوفر لك ولعائلتك تجربة فحص مريحة وسحب عينات رفيق بالمعمل أو من منزلك، مع استلام النتائج معتمدة وموثقة عبر واتساب.
+</p>
+<!-- Quick Action Buttons -->
+<div class="w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-8">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary-container text-white font-semibold text-sm hover:bg-brand-hover shadow-md btn-elevate" href="#home-collection">
+<span class="material-symbols-outlined text-[20px]">vaccines</span>
+<span class="">حجز سحب منزلي</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-emerald-700 border border-emerald-300 font-semibold text-sm hover:bg-emerald-50 shadow-sm btn-elevate" href="https://wa.me/201038879791?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%85%D8%B9%D9%85%D9%84%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D9%87%20%D8%A8%D8%A7%D9%84%D9%82%D8%B1%D8%B4%D9%8A%D9%87%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AA%D8%AD%D8%A7%D9%84%D9%8A%D9%84" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-whatsapp-green">chat</span>
+<span class="">تواصل عبر واتساب 01038879791</span>
+</a>
+</div>
+<!-- Reassuring Concrete Metrics -->
+<div class="w-full pt-5 border-t border-border-hairline grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+<div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low/70 border border-slate-100">
+<span class="material-symbols-outlined text-secondary text-[22px]">schedule</span>
+<div class="text-xs">
+<span class="font-bold text-primary block">9:00 ص - 12:00 منتصف الليل</span>
+<span class="text-text-muted text-[11px]">مفتوح يومياً بدون انقطاع</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low/70 border border-slate-100">
+<span class="material-symbols-outlined text-teal-soft text-[22px]">biotech</span>
+<div class="text-xs">
+<span class="font-bold text-primary block">أحدث أجهزة الفحص الآلي</span>
+<span class="text-text-muted text-[11px]">كواشف فحص مخبرية معتمدة</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low/70 border border-slate-100">
+<span class="material-symbols-outlined text-whatsapp-green text-[22px]">smartphone</span>
+<div class="text-xs">
+<span class="font-bold text-primary block">تقرير فوري عبر واتساب</span>
+<span class="text-text-muted text-[11px]">مع استشارة أخصائي المعمل</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Image Column: Clean Crop, ZERO Visual Collisions -->
+<div class="lg:col-span-6 relative">
+<div class="relative rounded-3xl p-2.5 lab-glass border border-white/90 shadow-xl overflow-hidden group">
+<div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900">
+<img alt="أجهزة التحاليل المخبرية وأنابيب العينات بمعمل الحياه للتحليل الطبيه بالقرشيه" class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AEtjO1V7FQo7ESYw7YD5PKgDQUGJBVNKfYI0-jUtY9sSlk5UdQwtm0k4kqgLAHGr3F47lewjckCt2WtrgJHtV_fNWxzwulUDYaYKQuHaOjjHLf20HIPc6o3JpDTnspVwjmZy32W0SIc8NYdh_87eiUenQq7EHBDwGX9wdDDGrudC_A_NkD9gYb4mGX64fYYDCr0kKklQCvPRJAWYj1IFFO5B4e97iXzv3UXk_SlIPEsNvs36dwHVPYOMAkFI">
+<!-- Clean Bottom Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#000f22]/90 via-[#000f22]/25 to-transparent pointer-events-none"></div>
+<!-- ONLY ONE single, calm, readable badge in bottom-left corner with dark scrim -->
+<div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl lab-glass-dark text-white border border-white/15">
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+<span class="text-xs font-bold text-teal-soft">معمل الحياه للتحليل الطبيه بالقرشيه</span>
+</div>
+<span class="text-[11px] text-slate-300 font-mono">01038879791</span>
+</div>
+<p class="text-xs text-slate-200 leading-relaxed">
+  بيئة مخبرية معقمة، سحب رقيق للأطفال وكبار السن، ودقة تشخيصية تفوق التوقعات.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- THE SIGNATURE SPECIMEN JOURNEY (من العينة إلى النتيجة) -->
+<section class="py-16 bg-white border-b border-border-hairline" id="specimen-journey">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="max-w-3xl mb-12">
+<div class="inline-flex items-center gap-2 text-secondary font-semibold text-xs mb-2">
+<span class="material-symbols-outlined text-[17px]">timeline</span>
+<span class="">من العينة إلى النتيجة • مسار العناية الطبية</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
+  كيف نعتني بعينتك لضمان أدق النتائج؟
+</h2>
+<p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+  رحلة واضحة تضمن الأمان والدقة والسرية من لحظة سحب العينة وحتى وصول التقرير الطبي المفصل إلى هاتفك.
+</p>
+</div>
+<!-- 5-Stage Progressive Module -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+<!-- Stage 1 -->
+<div class="p-5 rounded-2xl bg-surface-container-low/80 border border-outline-variant/30 hover:border-secondary/50 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs font-bold px-2 py-1 rounded bg-white text-secondary border border-secondary/20">01</span>
+<span class="material-symbols-outlined text-[24px] text-secondary">badge</span>
+</div>
+<h3 class="font-bold text-primary text-sm mb-2 group-hover:text-secondary transition-colors">استقبال العينة وتسجيل البيانات</h3>
+<p class="text-xs text-text-muted leading-relaxed">
+  تسجيل اسم المريض ورقم الهاتف والتحاليل المطلوبة بدقة مع ترقيم وتسمية الأنبوبة فورياً منعاً لأي لبس.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200/70 flex items-center gap-1.5 text-[11px] text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">توثيق الاسم والبيانات</span>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="p-5 rounded-2xl bg-surface-container-low/80 border border-outline-variant/30 hover:border-secondary/50 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs font-bold px-2 py-1 rounded bg-white text-secondary border border-secondary/20">02</span>
+<span class="material-symbols-outlined text-[24px] text-secondary">science</span>
+</div>
+<h3 class="font-bold text-primary text-sm mb-2 group-hover:text-secondary transition-colors">التجهيز والفصل المعياري السليم</h3>
+<p class="text-xs text-text-muted leading-relaxed">
+  فصل مصل أو بلازما الدم بالسرعة المعيارية والوقت المضبوط علمياً لضمان استقرار وتماسك مكونات العينة.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200/70 flex items-center gap-1.5 text-[11px] text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">فصل كيميائي سليم ومحكم</span>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="p-5 rounded-2xl bg-surface-container-low/80 border border-outline-variant/30 hover:border-secondary/50 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs font-bold px-2 py-1 rounded bg-white text-teal-soft border border-teal-soft/20">03</span>
+<span class="material-symbols-outlined text-[24px] text-teal-soft">biotech</span>
+</div>
+<h3 class="font-bold text-primary text-sm mb-2 group-hover:text-secondary transition-colors">إجراء الفحص بأحدث الأجهزة</h3>
+<p class="text-xs text-text-muted leading-relaxed">
+  إدخال العينات على أجهزة التحليل الآلية الحديثة مع استخدام كواشف كيميائية عالية الجودة ومعايرة بانتظام.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200/70 flex items-center gap-1.5 text-[11px] text-teal-soft font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-soft"></span>
+<span class="">أجهزة فحص دقيقة وكواشف معتمدة</span>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="p-5 rounded-2xl bg-surface-container-low/80 border border-outline-variant/30 hover:border-secondary/50 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs font-bold px-2 py-1 rounded bg-white text-secondary border border-secondary/20">04</span>
+<span class="material-symbols-outlined text-[24px] text-secondary">fact_check</span>
+</div>
+<h3 class="font-bold text-primary text-sm mb-2 group-hover:text-secondary transition-colors">المراجعة الطبية الدقيقة للنتائج</h3>
+<p class="text-xs text-text-muted leading-relaxed">
+  مراجعة وتدقيق القيم الناتجة من قِبل الطبيب المختص قبل اعتمادها للتأكد من اتساقها العلمي وحالة المريض.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-200/70 flex items-center gap-1.5 text-[11px] text-secondary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">اعتماد طبي متخصص</span>
+</div>
+</div>
+<!-- Stage 5 -->
+<div class="p-5 rounded-2xl bg-primary-container text-white border border-primary/20 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-mono text-xs font-bold px-2 py-1 rounded bg-white/10 text-teal-soft border border-white/20">05</span>
+<span class="material-symbols-outlined text-[24px] text-whatsapp-green">chat</span>
+</div>
+<h3 class="font-bold text-white text-sm mb-2">إرسال التقرير وشرحه عبر واتساب</h3>
+<p class="text-xs text-slate-300 leading-relaxed">
+  إرسال صورة التقرير واضحة لهاتفك فور جهوزيتها، مع إمكانية استشارة أخصائي المعمل لشرح أي تفاصيل تهمك.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-white/10 flex items-center gap-1.5 text-[11px] text-emerald-300 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="">تسليم سريع ومباشر على هاتفك</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DIAGNOSTIC DIRECTORY (فهرس الفحوصات الطبية وشروط التحضير) -->
+<section class="py-16 bg-surface" id="diagnostic-index">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<div class="inline-flex items-center gap-2 text-secondary font-semibold text-xs mb-2">
+<span class="material-symbols-outlined text-[17px]">menu_book</span>
+<span class="">فهرس الفحوصات الطبية وشروط التحضير</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
+  دليل الفحوصات المخبرية الأكثر طلباً بالقرشيه
+</h2>
+<p class="text-slate-600 text-sm mt-1">
+  اختر الفحص لمعرفة شروط الصيام، نوع العينة، والوقت المتوقع لاستلام النتيجة.
+</p>
+</div>
+<!-- Search Input -->
+<div class="w-full md:w-80 relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+<input class="w-full pr-10 pl-4 py-2.5 bg-white border border-outline-variant/40 rounded-xl text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all shadow-sm" id="quick-test-filter" oninput="liveFilterTests(this.value)" placeholder="ابحث عن اسم التحليل (مثال: سكر، غدة، CBC)..." type="text">
+</div>
+</div>
+<!-- Split Pane Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Sidebar -->
+<div class="lg:col-span-4 bg-white rounded-2xl border border-border-hairline p-3 shadow-sm flex flex-col gap-1.5" id="category-selector-list">
+<button class="cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all bg-primary-container text-white font-semibold" onclick="selectCategory('cbc', this)">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-teal-soft">bloodtype</span>
+<div class="flex flex-col">
+<span class="text-sm">صورة الدم الكاملة (CBC)</span>
+<span class="text-[11px] opacity-80 font-normal">الأنيميا، كرات الدم البيضاء، الصفائح</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all hover:bg-surface-container-low text-slate-700 font-medium" onclick="selectCategory('liver', this)">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">vital_signs</span>
+<div class="flex flex-col">
+<span class="text-sm">وظائف الكبد</span>
+<span class="text-[11px] text-slate-400 font-normal">إنزيمات الكبد، الصفراء، الألبومين</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all hover:bg-surface-container-low text-slate-700 font-medium" onclick="selectCategory('kidney', this)">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">water_drop</span>
+<div class="flex flex-col">
+<span class="text-sm">وظائف الكلى والأملاح</span>
+<span class="text-[11px] text-slate-400 font-normal">الكرياتينين، البولينا، حمض اليوريك</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all hover:bg-surface-container-low text-slate-700 font-medium" onclick="selectCategory('sugar', this)">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">monitoring</span>
+<div class="flex flex-col">
+<span class="text-sm">السكر والتراكمي (HbA1c)</span>
+<span class="text-[11px] text-slate-400 font-normal">سكر صائم، بعد الأكل بساعتين، تراكمي</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all hover:bg-surface-container-low text-slate-700 font-medium" onclick="selectCategory('lipids', this)">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">cardiology</span>
+<div class="flex flex-col">
+<span class="text-sm">الدهون والكوليسترول</span>
+<span class="text-[11px] text-slate-400 font-normal">الكوليسترول الكلي، الدهون الثلاثية، HDL، LDL</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all hover:bg-surface-container-low text-slate-700 font-medium" onclick="selectCategory('thyroid', this)">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">tune</span>
+<div class="flex flex-col">
+<span class="text-sm">هرمونات الغدة الدرقية</span>
+<span class="text-[11px] text-slate-400 font-normal">TSH, Free T3, Free T4</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all hover:bg-surface-container-low text-slate-700 font-medium" onclick="selectCategory('vitamins', this)">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">medication</span>
+<div class="flex flex-col">
+<span class="text-sm">الفيتامينات والمعادن</span>
+<span class="text-[11px] text-slate-400 font-normal">فيتامين د، مخزون الحديد (Ferritin)، الكالسيوم</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+</div>
+<!-- Detailed Card -->
+<div class="lg:col-span-8 bg-white rounded-3xl border border-border-hairline p-6 sm:p-8 shadow-sm relative overflow-hidden" id="inspection-panel">
+<div class="flex flex-wrap items-start justify-between gap-4 pb-6 border-b border-slate-100">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-secondary/10 text-secondary" id="active-test-code">CBC</span>
+<span class="text-xs text-health-dark font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-health-dark"></span>
+<span class="">متاح بالمعمل وبالسحب المنزلي</span>
+</span>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-primary" id="active-test-title">صورة الدم الكاملة (Complete Blood Count)</h3>
+<p class="text-sm text-text-muted mt-1 max-w-xl leading-relaxed" id="active-test-desc">
+  تحليل رئيسي للكشف عن فقر الدم (الأنيميا)، والاطمئنان على المناعة ومستوى الصفائح الدموية ومتابعة الحالات العامة.
+</p>
+</div>
+<div class="text-left bg-surface-container-low p-3.5 rounded-2xl border border-slate-100 min-w-[120px]">
+<div class="text-[11px] text-text-muted font-medium">سعر التحليل</div>
+<div class="text-2xl font-bold text-primary font-mono" id="active-test-price">90 ج.م</div>
+<div class="text-[10px] text-emerald-700">شامل تقرير موثق</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-6 border-b border-slate-100">
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low/60 border border-slate-100">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">no_meals</span>
+<div>
+<span class="text-xs font-bold text-primary block">شروط الصيام</span>
+<span class="text-xs text-text-muted" id="active-test-fasting">لا يشترط الصيام المسبق، يمكن إجراؤه في أي وقت طوال اليوم.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low/60 border border-slate-100">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">schedule</span>
+<div>
+<span class="text-xs font-bold text-primary block">موعد النتيجة</span>
+<span class="text-xs text-text-muted" id="active-test-duration">خلال ساعتين إلى 3 ساعات في نفس اليوم.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low/60 border border-slate-100">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">colorize</span>
+<div>
+<span class="text-xs font-bold text-primary block">نوع العينة</span>
+<span class="text-xs text-text-muted" id="active-test-sample">عينة دم وريدي في أنبوبة مخصصة ومعقمة.</span>
+</div>
+</div>
+</div>
+<div class="py-5">
+<h4 class="text-xs font-bold text-slate-700 mb-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span class="">أهم دواعي إجراء هذا الفحص:</span>
+</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600" id="active-test-points">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">الشعور بالدوخة والإرهاق السريع وشحوب الوجه</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">متابعة الأنيميا ونقص الحديد لدى الأطفال والحوامل</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">الاطمئنان عند تكرار نزلات البرد أو الاشتباه في وجود التهاب</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">الفحص الروتيني الشامل قبل أي تدخل جراحي</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100">
+<div class="text-xs text-text-muted">
+  نستقبلكم يومياً من 9:00 ص حتى 12:00 منتصف الليل، أو نصلكم لمنزلكم.
+</div>
+<div class="flex items-center gap-3">
+<a class="px-4 py-2.5 rounded-xl bg-primary-container text-white text-xs font-semibold hover:bg-brand-hover transition-colors shadow-sm" href="#home-collection">
+  حجز سحب منزلي للتحليل
+</a>
+<a class="px-4 py-2.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-300 text-xs font-semibold hover:bg-emerald-100 transition-colors flex items-center gap-1.5" href="https://wa.me/201038879791?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20CBC" id="active-test-whatsapp" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-whatsapp-green">chat</span>
+<span class="">استفسار واتساب</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HOME SAMPLE COLLECTION (العينة تيجي لحد بابك) -->
+<section class="py-16 bg-surface-container-low border-b border-border-hairline" id="home-collection">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Narrative -->
+<div class="lg:col-span-6 flex flex-col items-start">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-secondary text-xs font-semibold border border-secondary/20 mb-3">
+<span class="material-symbols-outlined text-[16px]">home_health</span>
+<span class="">خدمة أهالي القرشيه والقرى المجاورة وميت يزيد</span>
+</div>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight leading-snug mb-4">
+  العينة تيجي لحد بابك.. <br>
+<span class="text-secondary">راحة تامة لكبار السن والأطفال</span>
+</h2>
+<p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+  وفر عناء الانتقال والانتظار. نصلك لمنزلك أينما كنت داخل القرشيه والقرى المجاورة بفريق تمريض مدرب على سحب العينات بكل هدوء وبدون ألم، مع مراعاة كاملة لاحتياجات كبار السن والأطفال الرضع.
+</p>
+<div class="space-y-3.5 w-full">
+<div class="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-border-hairline shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold text-sm shrink-0">1</div>
+<div>
+<h4 class="text-sm font-bold text-primary">سحب لطيف بدون وخز مؤلم</h4>
+<p class="text-xs text-text-muted mt-0.5">استخدام إبر فراشية دقيقة تناسب الأوردة الرقيقة والصعبة.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-border-hairline shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold text-sm shrink-0">2</div>
+<div>
+<h4 class="text-sm font-bold text-primary">حقائب حفظ آمنة ومبردة</h4>
+<p class="text-xs text-text-muted mt-0.5">حفظ العينة في درجات حرارة قياسية حتى وصولها المعمل.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-border-hairline shadow-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold text-sm shrink-0">3</div>
+<div>
+<h4 class="text-sm font-bold text-primary">تغطية لكافة شوارع القرشيه وعزبها</h4>
+<p class="text-xs text-text-muted mt-0.5">تنسيق هاتفي سريع وتحديد الميعاد المناسب لك ولأسرتك.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Home Booking Form -->
+<div class="lg:col-span-6">
+<div class="bg-white rounded-3xl p-6 sm:p-8 border border-border-hairline shadow-lg">
+<div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
+<div>
+<h3 class="font-bold text-lg text-primary">طلب زيارة سحب منزلي</h3>
+<p class="text-xs text-text-muted">املأ البيانات وسنتواصل معك لتأكيد الموعد فوراً</p>
+</div>
+<span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+</div>
+<form class="space-y-4" onsubmit="handleHomeOrderSubmit(event)">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">1. اسم المريض ثلاثي</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-slate-200 text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" id="home-name" placeholder="مثال: الحاج أحمد إبراهيم" required="" type="text">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">2. رقم التليفون (واتساب)</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-slate-200 text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-mono" id="home-phone" placeholder="010XXXXXXXX" required="" type="tel">
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">العنوان داخل القرشيه</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-slate-200 text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" id="home-address" placeholder="اسم الشارع أو علامة مميزة" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 mb-1">3. التحاليل المطلوبة (أو اذكر وجود روشتة)</label>
+<textarea class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-slate-200 text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" id="home-tests" placeholder="اكتب أسماء الفحوصات (مثال: سكر صائم، وظائف كلى، دهون...) أو اكتب: روشتة الطبيب جاهزة" rows="3"></textarea>
+</div>
+<button class="w-full py-3.5 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-md btn-elevate" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span class="">إرسال طلب الزيارة عبر واتساب 01038879791</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-[11px] text-text-muted">
+<span class="material-symbols-outlined text-[15px] text-emerald-600">verified</span>
+<span class="">تأكيد الموعد مجاناً • خصوصية تامة لكل مريض</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- REAL WHATSAPP RESULT DISPATCH (استلم تقرير تحليلك فوراً عبر واتساب) -->
+<section class="py-16 bg-surface-inverse text-white relative overflow-hidden" id="result-portal">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#14B8A6 1px, transparent 1px); background-size: 32px 32px;"></div>
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+<div class="max-w-2xl mx-auto text-center mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-teal-soft text-xs font-medium mb-3 border border-white/10">
+<span class="material-symbols-outlined text-[16px] text-whatsapp-green">chat</span>
+<span class="">خدمة النتائج المباشرة • معمل الحياه بالقرشيه</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+  استلم تقرير تحليلك فوراً عبر واتساب
+</h2>
+<p class="text-slate-300 text-sm mt-2 leading-relaxed">
+  النتائج تصلكم مباشرة وموثقة عبر واتساب فور اعتمادها من الطبيب. أدخل بياناتك المسجلة وسيتواصل معك المعمل فوراً.
+</p>
+</div>
+<!-- Form Container -->
+<div class="max-w-3xl mx-auto bg-slate-900/90 rounded-3xl p-6 sm:p-8 border border-white/15 shadow-2xl backdrop-blur-xl">
+<form class="space-y-4" id="portal-form" onsubmit="handleResultWhatsAppSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1.5">اسم المريض ثلاثي</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-[18px]">person</span>
+<input class="w-full pr-10 pl-3 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-teal-soft focus:ring-1 focus:ring-teal-soft transition-all" id="res-name" placeholder="مثال: محمد السيد أحمد" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1.5">رقم الهاتف المسجل (واتساب)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-[18px]">call</span>
+<input class="w-full pr-10 pl-3 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-teal-soft focus:ring-1 focus:ring-teal-soft font-mono transition-all" id="res-phone" placeholder="010XXXXXXXX" required="" type="tel">
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1.5">رقم الإيصال / رقم الطلب</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-[18px]">receipt_long</span>
+<input class="w-full pr-10 pl-3 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-teal-soft focus:ring-1 focus:ring-teal-soft transition-all" id="res-order-no" placeholder="مثال: إيصال رقم 125 أو تاريخ اليوم" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1.5">اسم التحليل (أو التحاليل المطلوبة)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-[18px]">biotech</span>
+<input class="w-full pr-10 pl-3 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-teal-soft focus:ring-1 focus:ring-teal-soft transition-all" id="res-test-name" placeholder="مثال: صورة دم، سكر تراكمي، وظائف كبد..." required="" type="text">
+</div>
+</div>
+</div>
+<button class="w-full py-3.5 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg btn-elevate mt-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span class="">طلب النتيجة عبر واتساب الآن (01038879791)</span>
+</button>
+</form>
+<div class="mt-4 pt-4 border-t border-slate-800/70 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-teal-soft">verified</span>
+<span class="">سرية تامة لبياناتك وتقاريرك الطبية</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-teal-soft">schedule</span>
+<span class="">مواعيد العمل: يومياً 9:00 ص حتى 12:00 منتصف الليل</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPREHENSIVE PACKAGES & EXCLUSIVE OFFERS (العروض الحصرية وباقات الفحص) -->
+<section class="py-16 bg-white border-b border-border-hairline" id="packages">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs font-bold text-secondary tracking-wide uppercase">العروض الحصرية والوقاية الدورية</span>
+<h2 class="text-2xl sm:text-3xl font-bold text-primary tracking-tight mt-1">
+  باقات الفحص الطبي والعروض المخفضة
+</h2>
+<p class="text-slate-600 text-sm mt-2">
+  فحوصات مجمعة للاطمئنان الدوري بأسعار مخفضة وخصومات حصرية لأهالي القرشيه وميت يزيد.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+<!-- Package 1 -->
+<div class="p-6 rounded-3xl bg-surface-container-low border border-border-hairline flex flex-col justify-between hover:border-secondary/40 transition-all">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-slate-500">الفحص الأساسي</span>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">عرض حصري</span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2">باقة الاطمئنان السريع للأطفال والكبار</h3>
+<p class="text-xs text-text-muted mb-6">فحص أساسي للاطمئنان على الأنيميا، السكر، وظائف الكلى، والبول.</p>
+<ul class="space-y-2.5 text-xs text-slate-700 mb-8">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">صورة دم كاملة شاملة (CBC)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">سكر عشوائي بالدم (RBS)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">كرياتينين الكلى (Creatinine)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">تحليل بول كامل ميكروسكوبياً</span>
+</li>
+</ul>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-2xl font-bold font-mono text-primary">240</span>
+<span class="text-xs text-slate-500">جنية مصري</span>
+<span class="text-xs text-slate-400 line-through mr-2">310 ج.م</span>
+</div>
+<a class="w-full py-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 text-xs font-semibold hover:bg-slate-50 transition-colors flex items-center justify-center gap-1.5" href="https://wa.me/201038879791?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B7%D9%85%D8%A6%D9%86%D8%A7%D9%86%20%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-whatsapp-green">chat</span>
+<span class="">حجز الباقة عبر واتساب</span>
+</a>
+</div>
+</div>
+<!-- Package 2: Featured -->
+<div class="p-6 rounded-3xl bg-primary-container text-white border-2 border-secondary/50 flex flex-col justify-between shadow-xl relative lg:-translate-y-2">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-secondary text-white text-[11px] font-bold shadow">
+  الأكثر طلباً بالقرشيه
+</div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-teal-soft">الفحص الشامل</span>
+<span class="px-2 py-0.5 rounded bg-amber-400 text-slate-950 text-[10px] font-bold">خصم خاص لفترة محدودة</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">باقة الصحة العامة المتكاملة</h3>
+<p class="text-xs text-slate-300 mb-6">فحص شامل للكبد، الكلى، السكر التراكمي، والدهون الثلاثية.</p>
+<ul class="space-y-2.5 text-xs text-slate-200 mb-8">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">verified</span>
+<span class="">صورة دم كاملة تفصيلية (CBC)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">verified</span>
+<span class="">السكر التراكمي لـ 3 شهور (HbA1c)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">verified</span>
+<span class="">إنزيمات الكبد (SGPT &amp; SGOT)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">verified</span>
+<span class="">وظائف كلى ونقرس (Creatinine + Uric Acid)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">verified</span>
+<span class="">ملف كوليسترول ودهون ثلاثية كامل</span>
+</li>
+</ul>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-3xl font-bold font-mono text-white">490</span>
+<span class="text-xs text-slate-300">جنية مصري</span>
+<span class="text-xs text-slate-400 line-through mr-2">650 ج.م</span>
+</div>
+<a class="w-full py-3 rounded-xl bg-whatsapp-green hover:bg-emerald-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shadow-md" href="https://wa.me/201038879791?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%B5%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A9" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="">حجز الباقة مع إمكانية السحب المنزلي</span>
+</a>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="p-6 rounded-3xl bg-surface-container-low border border-border-hairline flex flex-col justify-between hover:border-secondary/40 transition-all">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-slate-500">رعاية كبار السن</span>
+<span class="px-2 py-0.5 rounded bg-teal-100 text-teal-800 text-[10px] font-bold">خصم 20% على الغدة</span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2">باقة الأمراض المزمنة والغدة</h3>
+<p class="text-xs text-text-muted mb-6">متابعة دقيقة لمرضى الضغط، السكر، وهرمون الغدة الدرقية والكوليسترول.</p>
+<ul class="space-y-2.5 text-xs text-slate-700 mb-8">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">هرمون الغدة الدرقية (TSH)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">سكر تراكمي وصائم بدقة</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">كفاءة الكلى وأملاح النقرس</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-health-dark text-[18px]">check_circle</span>
+<span class="">الدهون منخفضة وعالية الكثافة</span>
+</li>
+</ul>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="text-2xl font-bold font-mono text-primary">580</span>
+<span class="text-xs text-slate-500">جنية مصري</span>
+<span class="text-xs text-slate-400 line-through mr-2">780 ج.م</span>
+</div>
+<a class="w-full py-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 text-xs font-semibold hover:bg-slate-50 transition-colors flex items-center justify-center gap-1.5" href="https://wa.me/201038879791?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D8%A7%D8%B6%20%D8%A7%D9%84%D9%85%D8%B2%D9%85%D9%86%D8%A9%20%D9%88%D8%A7%D9%84%D8%BA%D8%AF%D8%A9" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-whatsapp-green">chat</span>
+<span class="">حجز الباقة عبر واتساب</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW DEDICATED SECTION: MEDICAL ADVICE (النصائح والإرشادات الطبية المخبرية) -->
+<section class="py-16 bg-surface-container-low/60 border-b border-border-hairline" id="medical-advice">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="max-w-3xl mb-10">
+<div class="inline-flex items-center gap-2 text-secondary font-semibold text-xs mb-2">
+<span class="material-symbols-outlined text-[17px]">medical_information</span>
+<span class="">النصائح والإرشادات الطبية المخبرية</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
+  إرشادات هامة لصحة أفضل ونتائج تحاليل دقيقة
+</h2>
+<p class="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+  إرشادات موثوقة من أطباء المعمل لضمان سلامة العينة، وطرق التحضير الصحيحة قبل الحضور.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Advice Card 1 -->
+<div class="p-6 rounded-3xl bg-white border border-border-hairline shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[22px]">no_meals</span>
+</div>
+<span class="text-[11px] font-bold text-secondary block mb-1">دليل الصيام الطبي</span>
+<h3 class="font-bold text-primary text-base mb-2">شروط الصيام قبل التحاليل</h3>
+<p class="text-xs text-text-muted leading-relaxed mb-4">
+  الدهون تحتاج 10-12 ساعة صيام، والسكر الصائم 8 ساعات. يسمح فقط بشرب الماء النقي لأنه لا يؤثر على تركيز كيمياء الدم.
+</p>
+</div>
+<a class="text-xs font-semibold text-secondary hover:text-primary flex items-center gap-1 pt-3 border-t border-slate-100" href="https://wa.me/201038879791?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B4%D8%B1%D9%88%D8%B7%20%D8%B5%D9%8A%D8%A7%D9%85%20%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84" rel="noopener noreferrer" target="_blank">
+<span class="">اسأل المعمل عبر واتساب</span>
+<span class="material-symbols-outlined text-[15px]">arrow_back</span>
+</a>
+</div>
+<!-- Advice Card 2 -->
+<div class="p-6 rounded-3xl bg-white border border-border-hairline shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-2xl bg-teal-soft/10 text-teal-soft flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+</div>
+<span class="text-[11px] font-bold text-teal-soft block mb-1">مرضى السكري</span>
+<h3 class="font-bold text-primary text-base mb-2">السكر التراكمي ومتابعته</h3>
+<p class="text-xs text-text-muted leading-relaxed mb-4">
+  تحليل HbA1c لا يتطلب أي صيام. يقيس انتظام السكر في آخر 90 يوماً ويجب إجراؤه كل 3 أشهر بانتظام لتجنب مضاعفات الأعصاب.
+</p>
+</div>
+<a class="text-xs font-semibold text-secondary hover:text-primary flex items-center gap-1 pt-3 border-t border-slate-100" href="https://wa.me/201038879791?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B3%D9%83%D8%B1%20%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D9%83%D9%85%D9%8A" rel="noopener noreferrer" target="_blank">
+<span class="">اسأل المعمل عبر واتساب</span>
+<span class="material-symbols-outlined text-[15px]">arrow_back</span>
+</a>
+</div>
+<!-- Advice Card 3 -->
+<div class="p-6 rounded-3xl bg-white border border-border-hairline shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[22px]">child_care</span>
+</div>
+<span class="text-[11px] font-bold text-amber-600 block mb-1">رعاية الأطفال</span>
+<h3 class="font-bold text-primary text-base mb-2">سحب العينات للأطفال بدون خوف</h3>
+<p class="text-xs text-text-muted leading-relaxed mb-4">
+  نهتم بالتهيئة النفسية واستخدام إبر فراشية دقيقة جداً مخصصة للأطفال لمنع أي ألم أو خوف، مع مكافأة تشجيعية لطفلك بعد السحب.
+</p>
+</div>
+<a class="text-xs font-semibold text-secondary hover:text-primary flex items-center gap-1 pt-3 border-t border-slate-100" href="https://wa.me/201038879791?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B3%D8%AD%D8%A8%20%D8%B9%D9%8A%D9%86%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84" rel="noopener noreferrer" target="_blank">
+<span class="">اسأل المعمل عبر واتساب</span>
+<span class="material-symbols-outlined text-[15px]">arrow_back</span>
+</a>
+</div>
+<!-- Advice Card 4 -->
+<div class="p-6 rounded-3xl bg-white border border-border-hairline shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-2xl bg-emerald-500/10 text-health-dark flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+</div>
+<span class="text-[11px] font-bold text-health-dark block mb-1">طب وقائي</span>
+<h3 class="font-bold text-primary text-base mb-2">أهمية الفحص الدوري الشامل</h3>
+<p class="text-xs text-text-muted leading-relaxed mb-4">
+  الفحص السنوي يكتشف اضطرابات الكبد، الكلى، والأنيميا قبل ظهور أي أعراض، مما يجعل العلاج أسهل وأكثر فاعلية بنسبة 90%.
+</p>
+</div>
+<a class="text-xs font-semibold text-secondary hover:text-primary flex items-center gap-1 pt-3 border-t border-slate-100" href="https://wa.me/201038879791?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%A7%D9%82%D8%A7%D8%AA%20%D8%A7%D9%84%D9%81%D8%AD%D8%B5%20%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A" rel="noopener noreferrer" target="_blank">
+<span class="">اسأل المعمل عبر واتساب</span>
+<span class="material-symbols-outlined text-[15px]">arrow_back</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW DEDICATED SECTION: EXACT LOCATION & DIRECTIONS (موقع المعمل وطريق الوصول) -->
+<section class="py-16 bg-surface border-b border-border-hairline" id="lab-location">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="max-w-3xl mb-10">
+<div class="inline-flex items-center gap-2 text-secondary font-semibold text-xs mb-2">
+<span class="material-symbols-outlined text-[17px]">directions</span>
+<span class="">موقع المعمل وطريق الوصول</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
+  كيف تصل إلينا بسهولة في القرشيه؟
+</h2>
+<p class="text-slate-600 text-sm sm:text-base mt-1 leading-relaxed">
+  موقع مركزي على الطريق السريع بين ميت يزيد والقرشيه، قريب من كافة الخدمات وبجوار علامات مميزة يسهل الوصول إليها.
+</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Left: Structured Address & Landmark Cues -->
+<div class="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-8 border border-border-hairline shadow-sm flex flex-col justify-between">
+<div>
+<!-- Plus Code / Exact Address -->
+<div class="p-4 rounded-2xl bg-surface-container-low border border-slate-200/80 mb-5">
+<div class="flex items-center gap-2 text-secondary text-xs font-bold mb-1">
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+<span class="">العنوان والرمز الجغرافي (Plus Code):</span>
+</div>
+<div class="text-sm sm:text-base font-bold text-primary font-mono select-all">
+  V42F+CJ3، ميت يزيد، السنطه، محافظة الغربية 6656588، مصر
+</div>
+</div>
+<!-- Detailed Landmarks -->
+<h4 class="text-xs font-bold text-slate-700 mb-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-secondary">signpost</span>
+<span class="">العلامات المميزة لسهولة الوصول:</span>
+</h4>
+<div class="space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
+<div class="flex items-start gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></span>
+<span class=""><strong>الطريق الرئيسي:</strong> على الطريق السريع الرابط بين ميت يزيد والقرشية.</span>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></span>
+<span class=""><strong>بعد المعصرة:</strong> بعد معصرة الخطيب مباشرة.</span>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></span>
+<span class=""><strong>الشارع المقابل:</strong> الشارع أمام محل ماميتو ستور.</span>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></span>
+<span class=""><strong>مواجهة المعمل:</strong> أمام جيم كابتن ناصر شمس الدين وعيادة د. أشرف يونس.</span>
+</div>
+</div>
+<!-- Schedule & Contact Info -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-slate-100 text-xs">
+<div class="flex items-center gap-2 text-slate-600">
+<span class="material-symbols-outlined text-[18px] text-teal-soft">schedule</span>
+<span class="">يومياً: 9:00 ص – 12:00 منتصف الليل</span>
+</div>
+<div class="flex items-center gap-2 text-slate-600 font-mono">
+<span class="material-symbols-outlined text-[18px] text-whatsapp-green">call</span>
+<span class="">تليفون / واتساب: 01038879791</span>
+</div>
+</div>
+</div>
+<!-- Direction Action Buttons -->
+<div class="flex flex-col sm:flex-row items-stretch gap-3 mt-6 pt-5 border-t border-slate-100">
+<a class="flex-1 py-3 px-4 rounded-xl bg-primary-container text-white text-center font-bold text-xs hover:bg-brand-hover transition-all flex items-center justify-center gap-2 shadow-sm btn-elevate" href="https://www.google.com/maps/search/?api=1&amp;query=V42F%2BCJ3%2C%20ميت%20يزيد%2C%20السنطه%2C%20محافظة%20الغربية%206656588%2C%20مصر" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-teal-soft">map</span>
+<span class="">افتح الموقع على Google Maps</span>
+</a>
+<a class="py-3 px-4 rounded-xl bg-white border border-slate-300 text-slate-800 text-center font-bold text-xs hover:bg-slate-50 transition-all flex items-center justify-center gap-2" href="tel:01038879791">
+<span class="material-symbols-outlined text-[18px] text-secondary">call</span>
+<span class="">اتصال هاتفي مباشر</span>
+</a>
+</div>
+</div>
+<!-- Right: Realistic Interactive Map Preview -->
+<div class="lg:col-span-6 relative rounded-3xl overflow-hidden border border-slate-200/80 shadow-xl bg-slate-950 flex flex-col justify-between group min-h-[420px]">
+  <!-- Satellite View Image Container -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL7zrpnlM9UqEqvKpdvVTXhufvleZ0_t3ZJ738Pj-wZW8sxeWHzXcElvm191nR_jRw0Mj4_h3JjmdGvgIfEibLFN5enzuTcn_Gk3cP98kPWE8VssMgwl0EqNcq6KfD2dMhsAhSPk_J_c-YdTVoP_0ryw1Ae-w8lh_UZuJ6KDPpCnArIm_2ndXbyZYnQ4DeJgI_SlpQejCQfZdMxtJWNOmU4_rRqlqqbWykQ887r7A5zL3Q_Vi_ySxWn7xZ6BkGcwc" alt="خريطة القمر الصناعي لطريق الوصول إلى معمل الحياه للتحليل الطبيه بالقرشيه" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 select-none">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-slate-950/60 pointer-events-none"></div>
+  </div>
+
+  <!-- Top Satellite Meta Overlay -->
+  <div class="relative z-10 p-5 flex flex-wrap items-center justify-between gap-3">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/85 backdrop-blur-md border border-white/20 text-white shadow-md">
+      <span class="flex h-2.5 w-2.5 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+      </span>
+      <span class="text-xs font-semibold text-emerald-300">خريطة أقمار صناعية فائقة الدقة (HD Satellite)</span>
+    </div>
+    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-slate-200 text-xs font-mono">
+      <span class="material-symbols-outlined text-[16px] text-teal-soft">satellite_alt</span>
+      <span class="">GPS: V42F+CJ3</span>
+    </div>
+  </div>
+
+  <!-- Mid Landmark Tags Strip (Matching Image Features) -->
+  <div class="relative z-10 px-5 flex flex-wrap gap-2 pointer-events-none">
+    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md border border-sky-400/40 text-[11px] font-medium text-sky-200 shadow-sm">
+      <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+      مسار معصرة الخطيب
+    </span>
+    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md border border-rose-400/40 text-[11px] font-medium text-rose-200 shadow-sm">
+      <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+      مسار هايبر بندا
+    </span>
+    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md border border-teal-soft/50 text-[11px] font-bold text-teal-200 shadow-sm">
+      <span class="w-1.5 h-1.5 rounded-full bg-teal-soft"></span>
+      معمل الحياة بالقرشية
+    </span>
+  </div>
+
+  <!-- Bottom Interactive Action & Direct View Bar -->
+  <div class="relative z-10 p-5 mt-auto">
+    <div class="p-4 rounded-2xl lab-glass-dark border border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="text-right text-white">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="material-symbols-outlined text-teal-soft text-[18px]">verified</span>
+          <h5 class="text-xs sm:text-sm font-bold">معمل الحياه - عمارة الكابتن ناصر شمس الدين</h5>
+        </div>
+        <p class="text-[11px] text-slate-300 leading-relaxed">
+          موضح على القمر الصناعي: بين معصرة الخطيب ومحل ماميتو ستور، وصولاً لهايبر بندا
+        </p>
+      </div>
+      <div class="flex items-center gap-2 w-full sm:w-auto shrink-0">
+        <a class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-teal-soft hover:bg-teal-300 text-slate-950 text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5" href="https://www.google.com/maps/search/?api=1&amp;query=V42F%2BCJ3%2C%20ميت%20يزيد%2C%20السنطه%2C%20محافظة%20الغربية%206656588%2C%20مصر" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          <span class="">فتح في خرائط Google</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<!-- LOCAL ACCESSIBILITY & CLINICAL TRUST (عن معمل الحياه بالقرشيه) -->
+<section class="py-16 bg-white" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="p-8 sm:p-12 rounded-3xl bg-primary text-white border border-white/10 relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 text-teal-soft text-xs font-semibold mb-3">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="">الطريق السريع بين ميت يزيد والقرشية - مركز السنطة</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
+  رعاية صحية تثق بها لعائلتك.. من أبناء بلدك
+</h2>
+<p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+  هدفنا في معمل الحياه للتحليل الطبيه بالقرشيه تقديم خدمة مخبرية متطورة ودقيقة تُغني أهالي القرشيه وميت يزيد والقرى المجاورة عن مشقة السفر، مع سحب مريح وأجهزة حديثة واستعداد دائم لتقديم النصيحة وشرح التحاليل بكل أمانة ووضوح.
+</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+<div class="flex items-center gap-2 text-slate-200">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">check_circle</span>
+<span class="">تفسير ومناقشة النتائج مع أخصائي المعمل</span>
+</div>
+<div class="flex items-center gap-2 text-slate-200">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">check_circle</span>
+<span class="">أدوات سحب أحادية الاستخدام معقمة 100%</span>
+</div>
+<div class="flex items-center gap-2 text-slate-200">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">check_circle</span>
+<span class="">مواعيد العمل: يومياً 9:00 ص حتى 12:00 منتصف الليل</span>
+</div>
+<div class="flex items-center gap-2 text-slate-200">
+<span class="material-symbols-outlined text-teal-soft text-[18px]">check_circle</span>
+<span class="">خدمة سحب منزلي فورية لكبار السن</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-3">
+<div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+<div class="text-xs text-slate-400 mb-1">العنوان الدقيق:</div>
+<div class="font-bold text-sm text-white">V42F+CJ3، ميت يزيد، السنطه، محافظة الغربية 6656588، مصر</div>
+<div class="text-xs text-teal-soft mt-1">الطريق السريع بعد معصرة الخطيب، أمام جيم كابتن ناصر</div>
+</div>
+<div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+<div class="text-xs text-slate-400 mb-1">للاتصال والاستفسار المباشر:</div>
+<div class="font-bold text-lg text-emerald-400 font-mono">01038879791</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<a class="flex-1 py-3 rounded-xl bg-white text-primary text-center font-bold text-xs hover:bg-slate-100 transition-colors" href="tel:01038879791">
+  اتصال هاتفي
+</a>
+<a class="flex-1 py-3 rounded-xl bg-whatsapp-green text-white text-center font-bold text-xs hover:bg-emerald-600 transition-colors flex items-center justify-center gap-1" href="https://wa.me/201038879791" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span class="">محادثة واتساب</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- PROFESSIONAL FOOTER -->
+<footer class="bg-white border-t border-border-hairline pt-12 pb-24 lg:pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-100">
+<!-- Col 1: Identity -->
+<div class="md:col-span-1">
+<div class="flex items-center gap-3 mb-3">
+<img alt="معمل الحياه للتحليل الطبيه بالقرشيه" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VfvaHF3LwfXLrpCYTSxIev6LSL7PBB-lKo0Ix5jFcDZ6VkIb-LacFE-5OnHLfrWv7fUSYMtVIZLMQx_0Rv2reki654W7CtZePgERno_PKOqtpBSoHnTH9zduN4VMPlSmYeJws9kwsWoCUZq6zAUtiTpVayRDWdVRh6G9JlxJV_m3Tlv238UzMdainYsE_bbhbzNlrdj4yn7x39oP3l5LjrgR5q6yEmwLHeUUeUdj2fkt3M2Eo0f0k">
+<span class="font-bold text-base text-primary">معمل الحياه بالقرشيه</span>
+</div>
+<p class="text-xs text-text-muted leading-relaxed mb-4">
+  معمل الحياه للتحليل الطبيه بالقرشيه، مركز السنطة. دقة في النتائج وسرعة في التسليم مع خدمة السحب المنزلي المريحة.
+</p>
+</div>
+<!-- Col 2: Navigation Links -->
+<div>
+<h4 class="font-bold text-xs text-primary mb-3">روابط الموقع</h4>
+<ul class="space-y-2 text-xs text-slate-600">
+<li class=""><a class="hover:text-secondary transition-colors" href="#specimen-journey">رحلة العينة داخل المعمل</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#diagnostic-index">فهرس الفحوصات وشروطها</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#home-collection">حجز سحب منزلي</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#result-portal">طلب النتيجة عبر واتساب</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#packages">العروض الحصرية وباقات الفحص</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#medical-advice">النصائح والإرشادات الطبية</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#lab-location">موقع المعمل وطريق الوصول</a></li>
+</ul>
+</div>
+<!-- Col 3: Location & Working Hours -->
+<div>
+<h4 class="font-bold text-xs text-primary mb-3">العنوان ومواعيد العمل</h4>
+<ul class="space-y-2 text-xs text-slate-600">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">location_on</span>
+<span class="">الطريق السريع بين ميت يزيد والقرشية - بعد معصرة الخطيب، الشارع أمام محل ماميتو ستور، أمام جيم كابتن ناصر شمس الدين وعيادة د. أشرف يونس</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">pin_drop</span>
+<span class="font-mono text-[11px]">V42F+CJ3، ميت يزيد، السنطه، الغربية 6656588</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">schedule</span>
+<span class="">يومياً من 9:00 صباحاً حتى 12:00 منتصف الليل</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">phone</span>
+<span class="font-mono">01038879791</span>
+</li>
+</ul>
+</div>
+<!-- Col 4: Quick Direct Contact -->
+<div>
+<h4 class="font-bold text-xs text-primary mb-3">تواصل مباشر</h4>
+<p class="text-xs text-text-muted mb-3">أرسل صورة الروشتة أو استفسر عن مواعيد التحليل في أي وقت عبر واتساب.</p>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-300 text-xs font-semibold hover:bg-emerald-100 transition-colors mb-2" href="https://wa.me/201038879791" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-whatsapp-green">chat</span>
+<span class="">واتساب: 01038879791</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-surface-container-low text-primary border border-slate-200 text-xs font-semibold hover:bg-slate-100 transition-colors" href="https://www.google.com/maps/search/?api=1&amp;query=V42F%2BCJ3%2C%20ميت%20يزيد%2C%20السنطه%2C%20محافظة%20الغربية%206656588%2C%20مصر" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-teal-soft">map</span>
+<span class="">فتح الموقع على خرائط Google</span>
+</a>
+</div>
+</div>
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+<div class="">جميع الحقوق محفوظة © معمل الحياه للتحليل الطبيه بالقرشيه 2025</div>
+<div class="flex items-center gap-4">
+<span class="">أمانة ودقة في التشخيص المخبري</span>
+<span class="">•</span>
+<span class="">رعاية مريحة لأهالينا بالقرشيه وميت يزيد</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FLOATING MOBILE PATIENT DOCK -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 flex items-center gap-2 shadow-2xl">
+<a class="flex-1 py-2.5 rounded-xl bg-primary-container text-white text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm" href="#home-collection">
+<span class="material-symbols-outlined text-[18px]">home_health</span>
+<span class="">طلب سحب منزلي</span>
+</a>
+<a class="w-11 h-11 rounded-xl bg-whatsapp-green text-white flex items-center justify-center shadow-sm shrink-0" href="https://wa.me/201038879791" rel="noopener noreferrer" target="_blank" title="محادثة واتساب">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+<a class="w-11 h-11 rounded-xl bg-slate-100 text-primary flex items-center justify-center shrink-0" href="tel:01038879791" title="اتصال بالمعمل">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</a>
+</div>
+<!-- CLIENT JAVASCRIPT LOGIC -->
+<script>
+  // Diagnostic Index Database
+  const diagnosticDatabase = {
+    cbc: {
+      code: "CBC",
+      title: "صورة الدم الكاملة (Complete Blood Count)",
+      desc: "تحليل رئيسي للكشف عن فقر الدم (الأنيميا)، والاطمئنان على المناعة ومستوى الصفائح الدموية ومتابعة الحالات العامة.",
+      price: "90 ج.م",
+      fasting: "لا يشترط الصيام المسبق، يمكن إجراؤه في أي وقت طوال اليوم.",
+      duration: "خلال ساعتين إلى 3 ساعات في نفس اليوم.",
+      sample: "عينة دم وريدي في أنبوبة مخصصة ومعقمة.",
+      points: [
+        "الشعور بالدوخة والإرهاق السريع وشحوب الوجه",
+        "متابعة الأنيميا ونقص الحديد لدى الأطفال والحوامل",
+        "الاطمئنان عند تكرار نزلات البرد أو الاشتباه في وجود التهاب",
+        "الفحص الروتيني الشامل قبل التدخلات الجراحية"
+      ],
+      whatsappText: "تحليل صورة الدم الكاملة CBC"
+    },
+    liver: {
+      code: "LFTs",
+      title: "وظائف الكبد والمرارة الكاملة",
+      desc: "تقييم كفاءة إنزيمات الكبد (ALT و AST) ومستوى الصفراء الكلية والمباشرة والألبومين في الدم.",
+      price: "180 ج.م",
+      fasting: "يُفضل صيام من 6 إلى 8 ساعات لتفادي تأثر قراءة الصفراء.",
+      duration: "في نفس اليوم خلال 3 إلى 4 ساعات.",
+      sample: "عينة مصل دم نقي.",
+      points: [
+        "الشعور بالخمول أو اصفرار بياض العينين والجلد",
+        "المتابعة الدورية لمستخدمي أدوية الضغط أو الدهون",
+        "الاطمئنان في حالات الكبد الدهني والتهابات المرارة",
+        "تقييم الحالة الغذائية العامة ومستوى البروتين"
+      ],
+      whatsappText: "تحليل وظائف الكبد"
+    },
+    kidney: {
+      code: "RFTs",
+      title: "وظائف الكلى والأملاح (Creatinine & Uric Acid)",
+      desc: "قياس تركيز الكرياتينين والبولينا لتقييم كفاءة الكليتين، مع فحص حمض اليوريك لتشخيص النقرس وآلام المفاصل.",
+      price: "140 ج.م",
+      fasting: "لا يشترط الصيام التام، لكن يُنصح بالاعتدال في اللحوم قبل الفحص.",
+      duration: "خلال ساعتين إلى 3 ساعات.",
+      sample: "عينة دم مصلية.",
+      points: [
+        "متابعة دورية أساسية لمرضى السكري وارتفاع ضغط الدم",
+        "آلام المفاصل خصوصاً في إصبع القدم أو القدمين (النقرس)",
+        "الشعور بآلام في الجانبين أو تغير في التبول",
+        "الاطمئنان على الكليتين عند تناول مسكنات لفترات طويلة"
+      ],
+      whatsappText: "تحليل وظائف الكلى والنقرس"
+    },
+    sugar: {
+      code: "HbA1c & Glucose",
+      title: "السكر والتراكمي (HbA1c & Glucose)",
+      desc: "يقيس السكر التراكمي متوسط نسبة السكر بالدم خلال الأشهر الثلاثة السابقة، وهو الأساس لتقييم انتظام العلاج.",
+      price: "110 ج.م",
+      fasting: "التراكمي لا يحتاج صيام. أما سكر الصائم فيحتاج صيام 8 ساعات.",
+      duration: "نفس اليوم خلال ساعتين.",
+      sample: "عينة دم وريدي.",
+      points: [
+        "المتابعة الدورية لمرضى السكر كل 3 أشهر لتجنب أي مضاعفات",
+        "الشعور بالعطش الشديد أو كثرة التبول وفقدان الوزن غير المبرر",
+        "فحص السكر العشوائي وفحص ما بعد الأكل بساعتين",
+        "الاطمئنان لمن لديهم تاريخ عائلي لمرض السكري"
+      ],
+      whatsappText: "تحليل السكر التراكمي وسكر الدم"
+    },
+    lipids: {
+      code: "Lipids",
+      title: "الدهون والكوليسترول الكامل",
+      desc: "قياس الكوليسترول الكلي والدهون الثلاثية والكوليسترول النافع والضار لحماية صحة القلب والشرايين.",
+      price: "170 ج.م",
+      fasting: "صيام ضروري من 10 إلى 12 ساعة (يُسمح بشرب الماء فقط).",
+      duration: "خلال 3 ساعات في نفس اليوم.",
+      sample: "مصل دم صائم.",
+      points: [
+        "فحص وقائي دوري لمن هم فوق الأربعين أو لمن يعانون من السمنة",
+        "متابعة تأثير أدوية خفض الكوليسترول",
+        "الحفاظ على سلامة الشرايين التاجية وضغط الدم",
+        "متابعة منتظمة لمرضى السكر والضغط"
+      ],
+      whatsappText: "تحليل الدهون والكوليسترول الكامل"
+    },
+    thyroid: {
+      code: "Thyroid",
+      title: "هرمونات الغدة الدرقية (TSH, FT3, FT4)",
+      desc: "التحليل الأهم لتشخيص خمول أو نشاط الغدة الدرقية ومعرفة أسباب بطء الحرق أو خفقان القلب السريع.",
+      price: "130 ج.م",
+      fasting: "لا يشترط الصيام المسبق، ويفضل أخذ العينة صباحاً.",
+      duration: "في نفس اليوم.",
+      sample: "عينة مصل دم.",
+      points: [
+        "الخمول الشديد وزيادة الوزن غير المبررة أو تساقط الشعر",
+        "التوتر ونوبات ضربات القلب السريعة ونزول الوزن المفاجئ",
+        "ضبط الجرعة الصحيحة لعلاج الثيروكسين",
+        "فحص ضروري لمتابعة انتظام الدورة الشهرية"
+      ],
+      whatsappText: "تحليل هرمونات الغدة الدرقية"
+    },
+    vitamins: {
+      code: "Vit-D & Ferritin",
+      title: "فيتامين د ومخزون الحديد (Vitamin D & Ferritin)",
+      desc: "فحص مستوى فيتامين د3 لصحة العظام والمناعة، ومخزون الحديد لمعرفة سبب الأنيميا المستمرة وضعف الشعر.",
+      price: "290 ج.م",
+      fasting: "لا يشترط الصيام.",
+      duration: "في نفس اليوم أو خلال 24 ساعة كحد أقصى.",
+      sample: "عينة مصل دم نقي.",
+      points: [
+        "آلام العظام والمفاصل وضعف النشاط البدني العام",
+        "تساقط الشعر الشديد وضعف الأظافر عند السيدات",
+        "تحديد الجرعة العلاجية الدقيقة لمكملات فيتامين د والحديد",
+        "الاطمئنان على كفاءة امتصاص الجسم للعناصر الأساسية"
+      ],
+      whatsappText: "تحليل فيتامين د ومخزون الحديد"
+    }
+  };
+
+  function selectCategory(catKey, btnElement) {
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.className = "cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all hover:bg-surface-container-low text-slate-700 font-medium";
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) icon.className = "material-symbols-outlined text-[20px] text-secondary";
+    });
+
+    btnElement.className = "cat-btn w-full flex items-center justify-between p-3.5 rounded-xl text-right transition-all bg-primary-container text-white font-semibold";
+    const activeIcon = btnElement.querySelector('.material-symbols-outlined');
+    if (activeIcon) activeIcon.className = "material-symbols-outlined text-[20px] text-teal-soft";
+
+    const data = diagnosticDatabase[catKey];
+    if (!data) return;
+
+    document.getElementById('active-test-code').textContent = data.code;
+    document.getElementById('active-test-title').textContent = data.title;
+    document.getElementById('active-test-desc').textContent = data.desc;
+    document.getElementById('active-test-price').textContent = data.price;
+    document.getElementById('active-test-fasting').textContent = data.fasting;
+    document.getElementById('active-test-duration').textContent = data.duration;
+    document.getElementById('active-test-sample').textContent = data.sample;
+
+    const pointsContainer = document.getElementById('active-test-points');
+    pointsContainer.innerHTML = '';
+    data.points.forEach(pt => {
+      const li = document.createElement('li');
+      li.className = "flex items-center gap-2";
+      li.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>${pt}</span>`;
+      pointsContainer.appendChild(li);
+    });
+
+    const waLink = document.getElementById('active-test-whatsapp');
+    waLink.href = `https://wa.me/201038879791?text=${encodeURIComponent('السلام عليكم معمل الحياه بالقرشيه، أرغب في الاستفسار وحجز ' + data.whatsappText)}`;
+  }
+
+  function liveFilterTests(term) {
+    const q = term.trim().toLowerCase();
+    if (!q) return;
+
+    for (const [key, item] of Object.entries(diagnosticDatabase)) {
+      if (item.title.toLowerCase().includes(q) || item.code.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q)) {
+        const btn = document.querySelector(`button[onclick*="'${key}'"]`);
+        if (btn) {
+          selectCategory(key, btn);
+          break;
+        }
+      }
+    }
+  }
+
+  // Real Contextual WhatsApp Result Dispatch
+  function handleResultWhatsAppSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('res-name').value.trim();
+    const phone = document.getElementById('res-phone').value.trim();
+    const orderNo = document.getElementById('res-order-no').value.trim();
+    const testName = document.getElementById('res-test-name').value.trim();
+
+    const message = `السلام عليكم معمل الحياه للتحليل الطبيه بالقرشيه،
+أرغب في استلام نتيجة التحليل:
+- اسم المريض: ${name}
+- رقم الهاتف المسجل: ${phone}
+- رقم الإيصال / الطلب: ${orderNo}
+- التحليل المطلوب: ${testName}`;
+
+    window.open(`https://wa.me/201038879791?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
+  // Home sample booking dispatch to WhatsApp
+  function handleHomeOrderSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('home-name').value.trim();
+    const phone = document.getElementById('home-phone').value.trim();
+    const address = document.getElementById('home-address').value.trim();
+    const tests = document.getElementById('home-tests').value.trim() || 'طلب فحص منزلي';
+
+    const message = `السلام عليكم معمل الحياه بالقرشيه،
+أرغب في حجز زيارة سحب منزلي:
+- الاسم: ${name}
+- رقم التليفون: ${phone}
+- العنوان داخل القرشيه: ${address}
+- التحاليل المطلوبة: ${tests}`;
+
+    window.open(`https://wa.me/201038879791?text=${encodeURIComponent(message)}`, '_blank');
+  }
+</script>
+
+
+</body></html>
