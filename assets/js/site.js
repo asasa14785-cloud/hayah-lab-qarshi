@@ -116,13 +116,13 @@
     box.innerHTML = TESTS.map(function (t, i) {
       var on = i === 0;
       return '<button class="' + (on ? esc(BTN_ON) : esc(BTN_OFF)) + '" onclick="selectCategory(\'' + esc(t.key) + '\', this)">' +
-        '<div class="flex items-center gap-3">' +
-        '<span class="material-symbols-outlined text-[20px] ' + (on ? 'text-teal-soft' : 'text-secondary') + '">' + esc(t.icon || 'bloodtype') + '</span>' +
-        '<div class="flex flex-col">' +
+        '<div class="flex items-center gap-3 min-w-0 flex-1">' +
+        '<span class="material-symbols-outlined text-[20px] ' + (on ? 'text-teal-soft' : 'text-secondary') + ' shrink-0">' + esc(t.icon || 'bloodtype') + '</span>' +
+        '<div class="flex flex-col min-w-0">' +
         '<span class="text-sm">' + esc(shortTitle(t.title)) + (t.code && shortTitle(t.title).indexOf(t.code) === -1 ? ' (' + esc(t.code) + ')' : '') + '</span>' +
         (t.subtitle ? '<span class="text-[11px] ' + (on ? 'opacity-80 font-normal' : 'text-slate-400 font-normal') + '">' + esc(t.subtitle) + '</span>' : '') +
         '</div></div>' +
-        '<span class="material-symbols-outlined text-[18px]">chevron_left</span>' +
+        '<span class="material-symbols-outlined text-[18px] shrink-0">chevron_left</span>' +
         '</button>';
     }).join('');
   }

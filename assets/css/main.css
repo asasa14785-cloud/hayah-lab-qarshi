@@ -137,3 +137,11 @@
 .inp-err { border-color: #ef4444 !important; box-shadow: 0 0 0 3px rgba(239,68,68,.15) !important; }
 @keyframes shk { 0%,100% { transform: translateX(0); } 25% { transform: translateX(5px); } 75% { transform: translateX(-5px); } }
 .shake { animation: shk .3s ease; }
+
+/* ===== حراس التجاوب: استحالة التمدد الأفقي ===== */
+html, body { max-width: 100%; overflow-x: clip; }
+main, footer { overflow-x: clip; }
+img, video { max-width: 100%; }
+#category-selector-list .cat-btn > div { min-width: 0; }
+#category-selector-list .cat-btn span { overflow-wrap: anywhere; }
+table, thead, tbody, tr { overflow-wrap: anywhere; }
