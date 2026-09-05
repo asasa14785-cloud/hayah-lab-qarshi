@@ -25,7 +25,10 @@ assets/css/main.css     ستايلات الموقع المستخرجة
 assets/js/tailwind-config.js  إعدادات الألوان والخط
 assets/js/site-legacy.js      منطق العرض الأصلي (Fallback لو السيرفر مقفول)
 assets/js/site.js             الربط بالباك اند (يجلب التحاليل/الباقات/الإرشادات/الإعدادات)
-server.js               الباك اند (Express + SQLite مدمجة، بدون مكتبات خارجية)
+lib/                    منطق التطبيق المشترك (يعمل محلياً وعلى Vercel)
+api/index.js            مدخل الدوال السحابية (Vercel فقط)
+local-server.js         التشغيل المحلي (لا يُستخدم في السحابة)
+vercel.json             توجيه المسارات على Vercel
 lab.db                  قاعدة البيانات (ملف واحد — نسخه = نسخة احتياطية)
 admin/index.html        لوحة التحكم (لا تعمل إلا على المسار السري + الباسورد)
 code.html               نسخة أصلية احتياطية (لا تُمسح)

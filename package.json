@@ -4,8 +4,8 @@
   "description": "معمل الحياه بالقرشيه - موقع + باك اند محلي + لوحة تحكم",
   "type": "commonjs",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node local-server.js",
+    "dev": "node --watch local-server.js"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",

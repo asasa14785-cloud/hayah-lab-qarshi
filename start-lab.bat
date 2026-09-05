@@ -23,7 +23,7 @@ if not exist "index.html" (
 curl -s -o nul http://localhost:3000/api/public/settings
 if errorlevel 1 (
   echo Starting server...
-  start "HayahLabServer" /min cmd /c node server.js
+  start "HayahLabServer" /min cmd /c node local-server.js
 ) else (
   echo Server is already running.
 )
