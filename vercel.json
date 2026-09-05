@@ -6,7 +6,7 @@
       "src": "api/index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": "assets/img/**",
+        "includeFiles": ["assets/img/**", "admin/**"],
         "maxDuration": 60
       }
     },
