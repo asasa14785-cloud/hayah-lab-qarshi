@@ -97,9 +97,9 @@
     }
 /* test-list-scroll-v1 */
 
-/* ===== قائمة التحاليل: ارتفاع ثابت + شريط تمرير مخصص ===== */
+/* ===== قائمة التحاليل: 3 ظاهرة + الباقي بالتمرير ===== */
 #category-selector-list {
-  max-height: 580px;
+  max-height: 300px;
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
@@ -129,7 +129,7 @@
 }
 @media (max-width: 1023px) {
   #category-selector-list {
-    max-height: 440px;
+    max-height: 280px;
   }
 }
 
